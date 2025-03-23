@@ -69,3 +69,18 @@ stack.append(result_2) # => [6]
 # last element in stack is result
 stack # => [6]
 ```
+
+## V2 version
+
+```ruby
+require_relative "v2"
+
+input = "+ + 12 16 * 10 4"
+output = 68
+result = PolishNotationCalculator.new(input).evaluate
+if result == output
+  puts "Works! '#{input}' is equal to '#{result}'"
+else
+  puts "Something went wrong! '#{input}' is NOT equal to '#{result}'"
+end
+```

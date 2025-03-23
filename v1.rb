@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "set"
-
 # Write a program to evaluate a prefix notation string.
 # Input operators: "+", "*", "-", "/".
 # Numbers are all positive integers only.
@@ -41,7 +39,7 @@ require "set"
 # In our case, I will write simple calc for Polish notation.
 
 # This is a set of operators: plus, minus, multiply, divide.
-OPERATORS = Set["+", "-", "*", "/"]
+OPERATORS = ["+", "-", "*", "/"]
 
 EXAMPLES = [
   {

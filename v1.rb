@@ -73,12 +73,15 @@ def evaluate(expression)
 
   # Token is minimal building block. In you case,
   # operator (like "+") or operand (like "1").
-  # E.g. "+ 1 2" reads like, operator "+1, operand "1" and operand "2".
+  # E.g. "+ 1 2" reads: operator "+1, operand "1" and operand "2".
   #
   # let's split input to tokens by space and reverse
   # e.g. "+ 1 2" => ["2", "1", "+"]
   #
-  #
+  # Here should be the question. Why we reverse?
+  # Let's see on simple example: "+ 1 2".
+  # In this case, we know that we take zero element as operator and
+  # first and second as operands.
   tokens = expression.split(" ").reverse
 
   # process tokens

@@ -105,6 +105,7 @@ def evaluate(expression)
   tokens = expression.split(" ").reverse
 
   # We are using stack for storing operands.
+  # [LIFO (Last In First Out)](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)).
   stack = []
 
   # process tokens

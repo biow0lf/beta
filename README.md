@@ -3,7 +3,7 @@
 ## Quick calculation
 
 ```shell
-ruby v1.rb "+ + 12 16 * 10 4"
+bundle exec ruby v1.rb "+ + 12 16 * 10 4"
 ```
 
 ## Algorithm visualization

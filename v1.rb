@@ -8,6 +8,15 @@ require "set"
 # For any such a string the program should return one number which is the
 # result of the calculation.
 
+# NOTES:
+# What is "prefix notation"?
+# Prefix notation is just ["Polish notation"](https://en.wikipedia.org/wiki/Polish_notation).
+# Let's see example: "+ 1 2".
+# "+" is [operator](https://en.wikipedia.org/wiki/Operation_(mathematics))
+# and "1" and "2" are [operands](https://en.wikipedia.org/wiki/Operand).
+#
+# So, "+ 1 2" is just "1 + 2".
+
 OPERATORS = Set["+", "-", "*", "/"]
 
 EXAMPLES = [

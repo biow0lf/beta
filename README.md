@@ -10,6 +10,8 @@ bundle exec ruby v1.rb "+ + 12 16 * 10 4"
 
 ```shell
 bundle exec ruby v1.rb
+# or v2
+bundle exec ruby v2_tests.rb
 ```
 
 ## Algorithm visualization

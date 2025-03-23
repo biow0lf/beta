@@ -2,13 +2,15 @@
 
 ## Tokenization
 
+## Example "+ + 1 2 3"
+
 ```ruby
 input = "+ + 1 2 3" # => "+ + 1 2 3"
 
 tokens = input.split.reverse # => ["3", "2", "1", "+", "+"]
 ```
 
-## Calculation
+### Calculation
 
 ```ruby
 stack = []

@@ -139,10 +139,11 @@ def self_test
   end
 end
 
-self_test
+if ARGV == []
+  self_test
+else
+  expression = ARGV[0]
+  result = evaluate(expression)
 
-# if ARGV[1] == ""
-#   self_test
-# else
-#   puts evaluate(ARGV[1])
-# end
+  puts "Input: '#{expression}' -- result: '#{result}'"
+end

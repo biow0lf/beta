@@ -17,7 +17,8 @@ require "set"
 #
 # So, "+ 1 2" is just "1 + 2".
 #
-# From another side: this can looks like s-expressions from lisp.
+# From another side: this is s-expressions from lisp.
+#
 # E.g. in SBCL console:
 # ```
 # * (+ 1 2)
@@ -63,3 +64,27 @@ EXAMPLES = [
     output: 68
   }
 ]
+
+def evaluate(expression)
+  0
+end
+
+def self_test
+  EXAMPLES.each do |example|
+    input, output = example[:input], example[:output]
+    result = evaluate(input)
+    if result == output
+      puts "Works!"
+    else
+      puts "Something went wrong!"
+    end
+  end
+end
+
+self_test
+
+# if ARGV[1] == ""
+#   self_test
+# else
+#   puts evaluate(ARGV[1])
+# end

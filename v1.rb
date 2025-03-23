@@ -104,12 +104,36 @@ def evaluate(expression)
   # 6. Calculate again.
   tokens = expression.split(" ").reverse
 
+  # We are using stack for storing operands.
+  stack = []
+
   # process tokens
   tokens.each do |token|
+    if OPERATORS.include?(token)
+      # Take last two operands from stack.
+      operand_1 = stack.pop
+      operand_2 = stack.pop
 
+      puts operand_1.inspect
+      puts operand_2.inspect
+      puts token.inspect
+
+      result = operand_1.public_send(token, operand_2)
+      puts result
+
+      # put result back to end of stack
+      stack.append(result)
+    else
+      # If token is not operator, append token to end of stack for later.
+      # If token is not operator, convert to int.
+      stack.append(token.to_i)
+    end
   end
 
-  0
+  puts "Stack: #{stack.inspect}"
+
+  # Last value in stack is expression result
+  stack.pop
 end
 
 def self_test

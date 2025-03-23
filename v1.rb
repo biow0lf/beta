@@ -81,7 +81,27 @@ def evaluate(expression)
   # Here should be the question. Why we reverse?
   # Let's see on simple example: "+ 1 2".
   # In this case, we know that we take zero element as operator and
-  # first and second as operands.
+  # first and second as operands. And everything that we should do
+  # is just first operand, operator and second operand.
+  # E.g. "1", "+", "2". -> "1 + 2" -> 3.
+  #
+  # But, of last operand is expression, we need to calculate it before
+  # calculating current expression.
+  # E.g. "+ + 1 2 3". We should calculate "+ 2 3" before calculating "+ 1 5".
+  # So, let's reverse it.
+  #
+  # E.g. "+ + 1 2 3" => ["3", "2", "1", "+", "+"]
+  # We start from end. Take "3" and "2" as operands and start looking on for
+  # operator. We take first operator from array that after and numbers.
+  # Evaluate it and put back for calculation.
+  #
+  # ["3", "2", "1", "+", "+"]:
+  # 1. Take 3 and 2 as operands.
+  # 2. Take + as operator.
+  # 3. Calculate 3 + 2 = 5.
+  # 4. Replace "3" and "2" with "5"
+  # 5. Remove "+" from array. It will be: ["5", "1", "+"]
+  # 6. Calculate again.
   tokens = expression.split(" ").reverse
 
   # process tokens

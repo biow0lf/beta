@@ -16,6 +16,28 @@ require "set"
 # and "1" and "2" are [operands](https://en.wikipedia.org/wiki/Operand).
 #
 # So, "+ 1 2" is just "1 + 2".
+#
+# From another side: this can looks like s-expressions from lisp.
+# E.g. in SBCL console:
+# ```
+# * (+ 1 2)
+# 3
+# * (+ (+ 1 2) 30)
+# 33
+# * (+ (+ 12 16) (* 10 4))
+# 68
+# ```
+#
+# In SBCL console we can have a little bit more fun:
+#
+# Sum negative numbers:
+# ```
+# * (+ 0.9 -0.9)
+# 0.0
+# *
+# ```
+
+# In our case, I will write simple calc for Polish notation.
 
 OPERATORS = Set["+", "-", "*", "/"]
 

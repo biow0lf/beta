@@ -139,9 +139,9 @@ def self_test
     input, output = example[:input], example[:output]
     result = evaluate(input)
     if result == output
-      puts "Works!"
+      puts "Works! '#{example[:input]}' is equal to '#{result}'"
     else
-      puts "Something went wrong!"
+      puts "Something went wrong! '#{example[:input]}' is NOT equal to '#{result}'"
     end
   end
 end

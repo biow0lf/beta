@@ -6,6 +6,12 @@
 bundle exec ruby v1.rb "+ + 12 16 * 10 4"
 ```
 
+## Self test
+
+```shell
+bundle exec ruby v1.rb
+```
+
 ## Algorithm visualization
 
 ### Tokenization

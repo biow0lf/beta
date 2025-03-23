@@ -40,6 +40,7 @@ require "set"
 
 # In our case, I will write simple calc for Polish notation.
 
+# This is a set of operators: plus, minus, multiply, divide.
 OPERATORS = Set["+", "-", "*", "/"]
 
 EXAMPLES = [
@@ -54,18 +55,37 @@ EXAMPLES = [
     output: 3
   },
   {
-    # "+ + 1 2 30" => 33 ((1+2)+30)
+    # "+ + 1 2 30" => 33 ((1 + 2) + 30)
     input: "+ + 1 2 30",
     output: 33
   },
   {
-    # "+ + 12 16 * 10 4" => 68 ((12+16)+(10*4))
+    # "+ + 12 16 * 10 4" => 68 ((12 + 16) + (10 * 4))
     input: "+ + 12 16 * 10 4",
     output: 68
   }
 ]
 
+# @param expression [String] Input expression e.g. "+ 1 2"
 def evaluate(expression)
+  # save input for later
+  input = expression.dup
+
+  # Token is minimal building block. In you case,
+  # operator (like "+") or operand (like "1").
+  # E.g. "+ 1 2" reads like, operator "+1, operand "1" and operand "2".
+  #
+  # let's split input to tokens by space and reverse
+  # e.g. "+ 1 2" => ["2", "1", "+"]
+  #
+  #
+  tokens = expression.split(" ").reverse
+
+  # process tokens
+  tokens.each do |token|
+
+  end
+
   0
 end
 

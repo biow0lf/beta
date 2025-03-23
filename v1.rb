@@ -68,9 +68,6 @@ EXAMPLES = [
 
 # @param expression [String] Input expression e.g. "+ 1 2"
 def evaluate(expression)
-  # save input for later
-  input = expression.dup
-
   # Token is minimal building block. In you case,
   # operator (like "+") or operand (like "1").
   # E.g. "+ 1 2" reads: operator "+1, operand "1" and operand "2".
@@ -123,11 +120,11 @@ def evaluate(expression)
       puts result
 
       # put result back to end of stack
-      stack.append(result)
+      stack.push(result)
     else
       # If token is not operator, append token to end of stack for later.
       # If token is not operator, convert to int.
-      stack.append(token.to_i)
+      stack.push(token.to_i)
     end
   end
 

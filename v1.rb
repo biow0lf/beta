@@ -112,12 +112,7 @@ def evaluate(expression)
       operand_1 = stack.pop
       operand_2 = stack.pop
 
-      puts operand_1.inspect
-      puts operand_2.inspect
-      puts token.inspect
-
       result = operand_1.public_send(token, operand_2)
-      puts result
 
       # put result back to end of stack
       stack.push(result)
@@ -128,8 +123,6 @@ def evaluate(expression)
     end
   end
 
-  puts "Stack: #{stack.inspect}"
-
   # Last value in stack is expression result
   stack.pop
 end
@@ -139,9 +132,9 @@ def self_test
     input, output = example[:input], example[:output]
     result = evaluate(input)
     if result == output
-      puts "Works! '#{example[:input]}' is equal to '#{result}'"
+      puts "Works! '#{input}' is equal to '#{result}'"
     else
-      puts "Something went wrong! '#{example[:input]}' is NOT equal to '#{result}'"
+      puts "Something went wrong! '#{input}' is NOT equal to '#{result}'"
     end
   end
 end
